@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интелкон — редизайн и развитие proptech-платформы.">
+  <title>Интелкон — редизайн и развитие PROPTECH-платформы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page--intelkon">
+  <div class="page">
+    <header class="header header--case">
+      <a class="header__back" href="index.html" aria-label="Вернуться на главную"><span class="arrow-left">↑</span></a>
+      <p class="header__identity">
+        <span class="header__name">Привет, я&nbsp;Даня</span>
+        <span class="header__wave" aria-hidden="true">👋</span>
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="case-hero" aria-label="Интелкон">
+        <h1 class="case-hero__title">Интелкон — редизайн и развитие <br>PROPTECH-платформы</h1>
+        <div class="case-hero__grid">
+          <div class="case-hero__left">
+            <div class="case-hero__panel case-hero__panel--phone">
+              <img src="assets/intelkon-replace/img01-cvr.png" alt="" width="1020" height="762" decoding="async">
+            </div>
+            <div class="case-hero__panel case-hero__panel--logo">
+              <img src="assets/intelkon-replace/img02-cvr.png" alt="" width="1020" height="470" decoding="async">
+            </div>
+          </div>
+          <div class="case-hero__panel case-hero__panel--desktop">
+            <img src="assets/intelkon-replace/img03-cvr.png" alt="" width="1656" height="1248" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" aria-labelledby="toc-title">
+        <h2 class="case-section__title" id="toc-title">Содержание</h2>
+        <nav class="case-toc" aria-label="Содержание">
+          <ol class="case-toc__list" id="case-toc-list"></ol>
+        </nav>
+      </section>
+
+      <section class="case-section case-grid" id="company">
+        <h2 class="case-section__title">О компании</h2>
+        <div class="case-section__content text-editorial">
+          <p>Интелкон — технологическая компания, разрабатывающая комплексные решения для цифровизации жилой инфраструктуры. Основное направление — создание программных платформ и их интеграция в процессы управления объектами на всех этапах жизненного цикла: от эксплуатации до взаимодействия с жильцами.</p>
+          <p>Помимо разработки ПО, компания занимается внедрением и поддержкой собственных решений, а также интеграцией с инженерной инфраструктурой объектов — системы домофонии, видеонаблюдения, контроля доступа и другие элементы «умного дома».</p>
+          <p>Решения компании внедрялись в проектах девелоперов, включая ГК «Садовое кольцо» и MR Group. Работа с разными застройщиками предполагает вариативность процессов: различаются модели управления, структура подрядчиков и сценарии эксплуатации.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="context">
+        <h2 class="case-section__title">Контекст задачи</h2>
+        <div class="case-section__content text-editorial">
+          <p>Мне требовалось провести редизайн платформы, не нарушая существующие бизнес-процессы, и пересобрать пользовательский опыт в условиях уже сформированной логики системы.</p>
+          <p>Десктопной версией платформой пользуются операторы управляющих компаний, подрядные организации, администраторы и жильцы. Операторы обрабатывают заявки, отслеживают статусы и координируют выполнение работ. Подрядчики получают и выполняют заявки, взаимодействуют с управляющими компаниями. Администраторы настраивают систему: управляют компаниями, сотрудниками, услугами и правами доступа. Жильцы используют веб-приложение: создают заявки, заказывают услуги, открывают дверь и просматривают камеры.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="research">
+        <h2 class="case-section__title">Проблема и исследование</h2>
+        <div class="case-section__content text-editorial">
+          <p>Когда я подключился к проекту, бизнес-аналитик и технический писатель уже успели частично описать систему и собрать основные флоу в виде UML-диаграмм. Я включился на этапе проработки: изучил текущий продукт, подключился к глубинным интервью и начал разбирать, как сотрудники реально работают с системой.</p>
+          <p>Параллельно провёл UX-аудит существующего интерфейса. Анализ показал, что основные проблемы были связаны не с нехваткой функций, а с тем, как они организованы внутри системы.</p>
+          <p>Основной экран, работа с заявками, представлял собой плотную таблицу с большим количеством столбцов и второстепенных данных. Чтобы понять статус заявки или выполнить действие, пользователю приходилось вручную просматривать строки, переключаться между элементами и открывать дополнительные панели.</p>
+          <p>Интерфейс требовал постоянного «чтения», не позволяя быстро ориентироваться в потоке задач. Похожие проблемы проявлялись и в других частях системы: видеонаблюдение было представлено в виде однотипной сетки без контекста, коммуникация выглядела как отдельный инструмент без связки с задачами, данные отображались без приоритизации.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Платформы до редизайна и перезапуска</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Скриншоты платформы до редизайна">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img04-scrl01.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img05-scrl01.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img06-scrl01.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img07-scrl01.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content text-editorial">
+          <p>В интервью менеджеры УК довольно точно формулировали главный запрос: «Нужно видеть заявку, назначать исполнителя и передавать её в работу — без лишних таблиц и полей».</p>
+          <p>Отдельной проблемой было отсутствие мобильного сценария для конечных исполнителей. Заявки распределялись внутри платформы менеджером, но дальше сотрудники «в поле» выпадали из процесса: коммуникация и контроль работ происходили уже через звонки, WhatsApp и личное взаимодействие, а не внутри системы.</p>
+          <figure class="case-figure">
+            <div class="case-figure__frame"><img src="assets/intelkon-replace/img08.png" alt="" width="3340" height="2088" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="mvp">
+        <h2 class="case-section__title">Запуск MVP</h2>
+        <div class="case-section__content text-editorial">
+          <p>Совместно с бизнес-аналитиком мы приоритизировали функционал и определили минимальный набор возможностей для первого запуска. Параллельно я собрал кликабельный low-fidelity прототип, чтобы быстро проверять структуру экранов и пользовательские сценарии.</p>
+          <p>Фокус был на том, чтобы менеджер совершал минимум действий для выполнения ключевых задач — получить заявку, назначить сотрудника и передать её в работу. Второй важной задачей было встроить в процесс самих исполнителей: дать им простой мобильный сценарий получения заявок, отчётности по работам и перевода задач в статус «выполнено» с фотофиксацией результата.</p>
+          <p>Поэтому первым этапом решили запускать мобильную версию — именно её не хватало сотрудникам в ежедневной операционной работе. В итоге MVP удалось вывести в прод примерно за месяц. Прототип практически без изменений лёг в основу реализации, что позволило быстро перейти от гипотез к реальному использованию и начать получать живой фидбек от пользователей.</p>
+        </div>
+      </section>
+
+      <figure class="case-figure case-figure--fs">
+        <div class="case-figure__frame case-figure__frame--wide"><img src="assets/intelkon-replace/img09-fs.png" alt="" width="5760" height="3360" loading="lazy" decoding="async"></div>
+      </figure>
+
+      <section class="case-section case-grid" id="desktop">
+        <h2 class="case-section__title">Развитие десктопной версии</h2>
+        <div class="case-section__content text-editorial">
+          <p>Команда постепенно укомплектовывалась, а продукт продолжал развиваться уже поверх работающего MVP. Мы придерживались mobile-first подхода и вместо механического переноса старой системы пересобирали логику взаимодействия, убирали лишние действия и перерабатывали структуру экранов.</p>
+          <p>Развитие десктопа мы совместили с изначально запланированным редизайном интерфейса. Основной фокус был не на косметическом обновлении UI, а на пересборке пользовательского опыта под растущую сложность продукта.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="requests">
+        <h2 class="case-section__title">Работа с заявками</h2>
+        <div class="case-section__content text-editorial">
+          <p>Ключевой сценарий платформы, работа с заявками, в старой версии был завязан на плотных таблицах и плохо отражал сам процесс работы.</p>
+          <p>В новой версии я пересобрал этот сценарий вокруг потока задач, а не хранения данных. Вместо «реестра заявок» появился jira-подобный интерфейс с kanban-представлением, где заявки визуально разделялись по этапам работы.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Пересобранный kanban и табличный вид заявок</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Kanban и таблица заявок">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img10-scrl-02.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img11-scrl-02.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content text-editorial">
+          <p>При этом табличный режим сохранился для сценариев, где важны детализация и точность данных.</p>
+          <ul>
+            <li>быстрее ориентироваться в текущем статусе задач</li>
+            <li>упростить распределение между сотрудниками</li>
+            <li>сократить количество лишних действий</li>
+            <li>снизить нагрузку при работе с большим объёмом заявок</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title">Переработка сервисных разделов</h2>
+        <div class="case-section__content text-editorial">
+          <p>Параллельно перерабатывались и другие части платформы. Раздел видеонаблюдения получил более структурированное отображение камер и контекста объектов. Внутренние чаты перестали быть отдельным инструментом «для переписки» и стали частью рабочих сценариев внутри системы.</p>
+          <p>Также начал развиваться аналитический блок. Вместо простого мониторинга показаний появились расширенные сценарии аналитики: контроль расходов, эксплуатационных затрат, аренды помещений и работы подрядчиков.</p>
+        </div>
+      </section>
+
+      <figure class="case-figure case-figure--fs">
+        <div class="case-figure__frame case-figure__frame--wide"><img src="assets/intelkon-replace/img12-fs.png" alt="" width="5760" height="2700" loading="lazy" decoding="async"></div>
+      </figure>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title">R&amp;D и новые сценарии</h2>
+        <div class="case-section__content text-editorial">
+          <p>С расширением пула клиентов в продукт начали добавляться сценарии, для которых практически не было готовых решений внутри рынка.</p>
+          <p>Одним из таких направлений стала работа с BIM-моделями и планами помещений внутри интерфейса платформы. Такие функции требовали исследовательского подхода: многие сценарии приходилось проектировать практически с нуля, совместно с product owner проверяя гипотезы и адаптируя решения под реальные бизнес-задачи.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Страница мониторинга задания и инженерных систем</h2>
+        <div class="case-section__content">
+          <figure class="case-figure">
+            <div class="case-figure__frame"><img src="assets/intelkon-replace/img13.png" alt="" width="1672" height="1044" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="resident-app">
+        <h2 class="case-section__title">Редизайн приложения жильцов</h2>
+        <div class="case-section__content text-editorial">
+          <p>Отдельно обновил интерфейс iOS-приложения для жильцов. Приложение уже использовалось пользователями и закрывало базовые сценарии взаимодействия с инфраструктурой дома: домофония, камеры, сообщения и управление доступом.</p>
+          <p>Я переработал структуру экранов, типографику, отступы и компоненты, сделав интерфейс визуально легче и чище без изменений ключевых пользовательских сценариев.</p>
+          <p>Основные сценарии — открытие дверей и ворот, просмотр камер и управление инфраструктурой дома — были собраны на одной главной странице. Это сократило количество переходов между разделами и сделало ключевые действия доступными сразу после открытия приложения.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Главная и чаты iOS</h2>
+        <div class="case-section__content">
+          <figure class="case-figure">
+            <div class="case-figure__frame"><img src="assets/intelkon-replace/img14.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content text-editorial">
+          <p>Чаты и уведомления переехали в верхнюю часть интерфейса по аналогии с веб-платформой для сотрудников. Такой подход помог унифицировать паттерны взаимодействия внутри экосистемы продукта и освободить tab bar под дальнейшее развитие приложения.</p>
+          <p>В roadmap приложение постепенно должно было развиваться от «пульта управления домом» в сторону полноценной сервисной платформы для жильцов: с магазином услуг, управлением IoT-устройствами и дополнительными домашними сценариями.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title">Айдентика и визуальный язык</h2>
+        <div class="case-section__content text-editorial">
+          <p>По мере развития продукта стало заметно, что визуальный образ компании начал расходиться с самим продуктом. Платформа постепенно уходила от «софта для домофонии» в сторону полноценной proptech/SaaS-системы с веб-интерфейсами, мобильными приложениями, аналитикой и сложными сервисными сценариями.</p>
+          <p>В рамках редизайна я обновил логотип, сохранив преемственность с предыдущей версией, но упростив форму и визуальный язык. Новая версия стала проще и легче визуально: уменьшилось количество деталей, смягчилась форма, изменилась типографика.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Логотип до и после</h2>
+        <div class="case-section__content">
+          <figure class="case-figure">
+            <div class="case-figure__frame"><img src="assets/intelkon-replace/img15.png" alt="" width="3344" height="1920" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content text-editorial">
+          <p>Обновлённый визуальный стиль начал использоваться не только внутри продукта, но и во внешних коммуникациях компании — презентациях, лендингах и коммерческих материалах для продаж.</p>
+          <p>По запросу sales-команды визуальный язык выстраивался вокруг баланса между «дружелюбным» и «корпоративным» образом: интерфейсы и материалы должны были выглядеть современно и технологично, но при этом оставаться достаточно строгими для B2B-коммуникации с управляющими компаниями, девелоперами и партнёрами.</p>
+        </div>
+      </section>
+
+      <figure class="case-figure case-figure--fs">
+        <div class="case-figure__frame case-figure__frame--wide"><img src="assets/intelkon-replace/img16.png" alt="" width="5760" height="2778" loading="lazy" decoding="async"></div>
+      </figure>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title">Расширение роли</h2>
+        <div class="case-section__content text-editorial">
+          <p>Внутри hardware-направления не было выделенного промышленного дизайнера — визуальные решения для устройств обычно собирались инженерами.</p>
+          <p>В какой-то момент мне поставили задачу собрать концепт PLC-модуля для демонстрации потенциального развития hardware-линейки компании. Я разработал визуальный концепт устройства с акцентом на более современный и цельный digital-first образ, синхронизированный с новым визуальным языком платформы.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Концепт PLC-модуля и продовый дизайн домофона с реализацией</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Hardware-концепты">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img17-scrl03.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/intelkon-replace/img18-scrl03.png" alt="" width="3344" height="2088" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content text-editorial">
+          <p>После этого hardware-команда начала подключать меня уже к реальным устройствам. Для нового домофона мне передали технические ограничения, размеры внутренней начинки и требования по производству, после чего я самостоятельно спроектировал внешний вид устройства.</p>
+          <p>Обновлённый логотип благодаря своей простой и универсальной форме ненавязчиво интегрировался в физические устройства — в том числе стал частью визуального сценария самого домофона. В итоге дизайн устройства практически без изменений ушёл в производство.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title">Результаты работы</h2>
+        <div class="case-section__content text-editorial">
+          <p>За полтора года работы над проектом я участвовал в развитии продукта на нескольких уровнях одновременно: от UX ключевых сценариев и запуска MVP до формирования визуального языка платформы и hardware-направления.</p>
+          <p>Вместе с командой мы перевели продукт на новую архитектуру и в сжатые сроки запустили мобильный MVP, который позволил быстро начать работу с пользователями и собирать обратную связь из реальных сценариев использования.</p>
+          <p>За время работы я:</p>
+          <ul>
+            <li>участвовал в исследовании пользовательских сценариев и глубинных интервью</li>
+            <li>проектировал и тестировал MVP мобильной платформы</li>
+            <li>переработал ключевые операционные сценарии системы</li>
+            <li>внедрил process-driven подход к работе с заявками через kanban-представление</li>
+            <li>участвовал в проработке новых R&amp;D-направлений платформы</li>
+            <li>обновил визуальную систему продукта и связанные маркетинговые материалы</li>
+            <li>разработал дизайн домофона, позже реализованный в производстве</li>
+          </ul>
+          <p>По мере роста продукта моя роль постепенно расширялась от проектирования интерфейсов до участия в формировании новых сервисов, пользовательских сценариев и общего направления развития экосистемы продукта.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <nav class="footer__nav" aria-label="Контакты">
+          <a class="footer__link" href="https://t.me/" target="_blank" rel="noopener noreferrer">Телеграм <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="mailto:">Почта <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://hh.ru/" target="_blank" rel="noopener noreferrer">HH <span class="arrow45">↑</span></a>
+        </nav>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
