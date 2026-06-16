@@ -240,3 +240,76 @@
 
   carousels.forEach(setupCarousel);
 })();
+
+/**
+ * Intelkon fullscreen case-study image viewer
+ */
+(function () {
+  "use strict";
+
+  var page = document.querySelector(".page--intelkon .main");
+  if (!page) return;
+
+  var images = Array.prototype.slice.call(page.querySelectorAll(".case-hero__panel img, .case-figure__frame img"));
+  var supportsTouch = window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 0;
+  if (!images.length) return;
+
+  function imageSize(img, attr) {
+    var value = parseInt(img.getAttribute(attr), 10);
+    return Number.isFinite(value) && value > 0 ? value : null;
+  }
+
+  images.forEach(function (img) {
+    var parent = img.parentElement;
+    var width = imageSize(img, "width") || img.naturalWidth || 1600;
+    var height = imageSize(img, "height") || img.naturalHeight || 1000;
+    var link;
+
+    if (!parent || parent.classList.contains("case-lightbox__item")) return;
+
+    link = document.createElement("a");
+    link.className = "case-lightbox__item";
+    link.href = img.currentSrc || img.src;
+    link.setAttribute("aria-label", img.alt ? "Открыть изображение: " + img.alt : "Открыть изображение");
+    link.setAttribute("data-pswp-width", width);
+    link.setAttribute("data-pswp-height", height);
+    link.setAttribute("data-cropped", "true");
+
+    parent.insertBefore(link, img);
+    link.appendChild(img);
+  });
+
+  import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js")
+    .then(function (module) {
+      var PhotoSwipeLightbox = module.default;
+      var lightbox = new PhotoSwipeLightbox({
+        gallery: ".page--intelkon .main",
+        children: ".case-lightbox__item",
+        pswpModule: function () {
+          return import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js");
+        },
+        bgOpacity: 0.88,
+        showHideAnimationType: "zoom",
+        initialZoomLevel: "fit",
+        secondaryZoomLevel: supportsTouch ? 2.5 : "fit",
+        maxZoomLevel: supportsTouch ? 4 : 1,
+        wheelToZoom: false,
+        bgClickAction: "close",
+        tapAction: "toggle-controls",
+        doubleTapAction: supportsTouch ? "zoom" : false,
+        imageClickAction: supportsTouch ? "zoom" : false,
+        arrowPrev: true,
+        arrowNext: true,
+        close: true,
+        zoom: false,
+        counter: false,
+        returnFocus: true,
+        trapFocus: true
+      });
+
+      lightbox.init();
+    })
+    .catch(function () {
+      document.documentElement.classList.add("is-lightbox-unavailable");
+    });
+})();

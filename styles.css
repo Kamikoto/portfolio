@@ -609,12 +609,38 @@ body.page--intelkon {
 }
 
 .case-figure__frame img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
 .case-figure__frame--wide img {
   width: 100%;
+}
+
+.case-lightbox__item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: zoom-in;
+}
+
+.case-lightbox__item:focus-visible {
+  outline: 2px solid var(--color-title);
+  outline-offset: 4px;
+}
+
+.case-lightbox__item img {
+  pointer-events: none;
+}
+
+.pswp {
+  --pswp-bg: rgba(9, 9, 9, 0.92);
+}
+
+.pswp__button--arrow,
+.pswp__button--close {
+  color: #fff;
 }
 
 .case-figure--fs {
