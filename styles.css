@@ -79,7 +79,9 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body.page--intelkon {
+body.page--intelkon,
+body.page--7tech,
+body.page--fllex {
   scroll-padding-top: 72px;
 }
 
@@ -378,7 +380,9 @@ button {
 /* ==========================================================================
    Intelkon case study
    ========================================================================== */
-body.page--intelkon {
+body.page--intelkon,
+body.page--7tech,
+body.page--fllex {
   --color-bg: #ffffff;
   --color-title: #002026;
   --color-body: #002026;
@@ -422,7 +426,9 @@ body.page--intelkon {
   overflow-x: hidden;
 }
 
-.page--intelkon .text-editorial {
+.page--intelkon .text-editorial,
+.page--7tech .text-editorial,
+.page--fllex .text-editorial {
   hyphens: none;
   -webkit-hyphens: none;
   word-break: normal;
@@ -463,6 +469,14 @@ body.page--intelkon {
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 8px;
+}
+
+.case-hero__grid--duo .case-hero__left {
+  grid-template-rows: 1fr;
+}
+
+.case-hero__grid--duo .case-hero__panel--phone {
+  aspect-ratio: 1020 / 1248;
 }
 
 .case-hero__panel {
@@ -698,6 +712,48 @@ body.page--intelkon {
   aspect-ratio: 3344 / 2088;
 }
 
+.case-figure__frame--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-container);
+}
+
+.case-figure__frame--centered-lilac {
+  background-color: #B7A9FF;
+}
+
+.case-figure__frame--centered-cloud {
+  background-color: #F8F8FC;
+}
+
+.case-centered-media {
+  display: block;
+  flex: 0 1 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.case-centered-media--square {
+  width: 29.9043%;
+  aspect-ratio: 1 / 1;
+}
+
+.case-centered-media--card {
+  width: 64.5933%;
+  aspect-ratio: 540 / 370;
+  border-radius: 10px;
+  box-shadow: 0 1.5px 4.5px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.case-figure__frame--centered .case-centered-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 .case-scroller__item img {
   width: 100%;
   height: 100%;
@@ -791,7 +847,9 @@ body.page--intelkon {
    Intelkon breakpoints
    -------------------------------------------------------------------------- */
 @media (min-width: 769px) {
-  body.page--intelkon {
+  body.page--intelkon,
+  body.page--7tech,
+  body.page--fllex {
     --case-h1-size: 54px;
     --case-h1-lh: 60px;
     --case-h2-size: 26px;
@@ -819,6 +877,12 @@ body.page--intelkon {
     min-height: 100%;
   }
 
+  .case-hero__grid--duo .case-hero__panel--phone {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 100%;
+  }
+
   .case-hero__panel--desktop {
     height: 100%;
     min-height: 280px;
@@ -842,7 +906,9 @@ body.page--intelkon {
 }
 
 @media (min-width: 1440px) {
-  body.page--intelkon {
+  body.page--intelkon,
+  body.page--7tech,
+  body.page--fllex {
     --page-padding-x: 64px;
     --case-section-space: 80px;
   }
@@ -900,30 +966,52 @@ body.page--intelkon {
   .page--intelkon .case-toc__link:hover,
   .page--intelkon .case-carousel__button,
   .page--intelkon .case-carousel__button:hover,
-  .page--intelkon .case-carousel__fill {
+  .page--intelkon .case-carousel__fill,
+  .page--7tech .header__back,
+  .page--7tech .header__back:hover,
+  .page--7tech .case-toc__link,
+  .page--7tech .case-toc__link:hover,
+  .page--7tech .case-carousel__button,
+  .page--7tech .case-carousel__button:hover,
+  .page--7tech .case-carousel__fill,
+  .page--fllex .header__back,
+  .page--fllex .header__back:hover,
+  .page--fllex .case-toc__link,
+  .page--fllex .case-toc__link:hover,
+  .page--fllex .case-carousel__button,
+  .page--fllex .case-carousel__button:hover,
+  .page--fllex .case-carousel__fill {
     transition: none;
   }
 
   .footer__link:hover,
-  .page--intelkon .header__back:hover {
+  .page--intelkon .header__back:hover,
+  .page--7tech .header__back:hover,
+  .page--fllex .header__back:hover {
     font-weight: var(--type-title-weight);
     font-variation-settings: "wght" var(--type-title-weight);
     letter-spacing: var(--type-title-ls);
   }
 
-  .page--intelkon .case-toc__link:hover {
+  .page--intelkon .case-toc__link:hover,
+  .page--7tech .case-toc__link:hover,
+  .page--fllex .case-toc__link:hover {
     font-weight: var(--case-toc-weight);
     font-variation-settings: "wght" var(--case-toc-weight);
     letter-spacing: var(--case-h2-ls);
   }
 
-  .page--intelkon .case-carousel__button:hover {
+  .page--intelkon .case-carousel__button:hover,
+  .page--7tech .case-carousel__button:hover,
+  .page--fllex .case-carousel__button:hover {
     font-weight: var(--case-h2-weight);
     font-variation-settings: "wght" var(--case-h2-weight);
     letter-spacing: var(--case-h2-ls);
   }
 
-  .page--intelkon .case-scroller {
+  .page--intelkon .case-scroller,
+  .page--7tech .case-scroller,
+  .page--fllex .case-scroller {
     scroll-behavior: auto;
   }
 }

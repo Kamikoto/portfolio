@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="7TECH — систематизация и развитие B2B MDM-системы.">
+  <title>7TECH — систематизация и развитие B2B MDM-системы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page--7tech">
+  <div class="page">
+    <header class="header header--case">
+      <a class="header__back" href="index.html" aria-label="Вернуться на главную"><span class="arrow-left">↑</span></a>
+      <p class="header__identity">
+        <span class="header__name">Привет, я&nbsp;Даня</span>
+        <span class="header__wave" aria-hidden="true">👋</span>
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="case-hero" aria-label="7TECH">
+        <h1 class="case-hero__title">7TECH — систематизация и развитие <br>B2B MDM-системы</h1>
+        <div class="case-hero__grid case-hero__grid--duo">
+          <div class="case-hero__left">
+            <div class="case-hero__panel case-hero__panel--phone">
+              <img src="assets/7tech/img01-cvr.png" alt="7TECH: интерфейс MDM-системы" width="1020" height="1248" decoding="async">
+            </div>
+          </div>
+          <div class="case-hero__panel case-hero__panel--desktop">
+            <img src="assets/7tech/img02-cvr.png" alt="7TECH: десктопный интерфейс платформы" width="1664" height="1248" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" aria-labelledby="toc-title">
+        <h2 class="case-section__title" id="toc-title">Содержание</h2>
+        <nav class="case-toc" aria-label="Содержание">
+          <ol class="case-toc__list" id="case-toc-list"></ol>
+        </nav>
+      </section>
+
+      <section class="case-section case-grid" id="company">
+        <h2 class="case-section__title">О компании</h2>
+        <div class="case-section__content text-editorial">
+          <p>7TECH разрабатывала решения для удалённого управления Android-устройствами и работала более чем в 19 странах через сеть из 150+ партнёров.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="context">
+        <h2 class="case-section__title">Контекст</h2>
+        <div class="case-section__content text-editorial">
+          <p>Платформа использовалась в разных сценариях: от управления корпоративными устройствами до smart collection — контроля смартфонов, выданных в рассрочку. Клиенты могли управлять устройствами удалённо, настраивать ограничения, устанавливать приложения, отправлять уведомления, создавать собственные конфигурации устройств и автоматизировать сценарии управления.</p>
+          <p>Я присоединился к проекту в момент технического рефакторинга платформы. Компания готовилась к дальнейшему развитию продукта, но существующий интерфейс и процессы проектирования уже плохо масштабировались.</p>
+          <p>На старте меня пригласили как второго дизайнера для систематизации интерфейсов и снижения потерь между дизайном и разработкой. Со временем я стал основным дизайнером продукта и начал отвечать не только за UI, но и за развитие новых сценариев системы.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="problems">
+        <h2 class="case-section__title">Выявленные проблемы</h2>
+        <div class="case-section__content text-editorial">
+          <p>Основной проблемой был накопившийся UX и дизайн долг. Макеты собирались без системного подхода: не использовались компоненты и auto-layout, одинаковые элементы постоянно дублировались вручную, а часть поведения интерфейса фронтенд-команда определяла уже по ходу разработки. На синхронизацию между дизайном и разработкой уходило много времени — любое изменение тянуло за собой обсуждения, уточнения и повторные дизайн-ревью.</p>
+          <p>Интерфейсы были перегружены декоративынми элементами, вместо иерахичной системы отступов, из-за чего длинные страницы начинали «рябить». Структура экранов читалась слабо: блоки конкурировали между собой, таблицы и фильтры плохо масштабировались и не отделяли важное от второстепенного. Многие настройки существовали только в текстовом виде, без визуализации. В результате система требовала постоянного «чтения интерфейса».</p>
+          <p>Вместо узнаваемых повторяющихся паттернов интерфейс постоянно менялся в деталях: например, хедер присутствовал не на всех страницах, и менялся структурно. Первостепенные и второстепенные кнопки отличались от страницы к странице, как и ховер состояния.</p>
+          <p>Боковое меню было смесью сущностей и действий: рядом с разделами находились кнопки «создать воздействие», «создать сборку», «создать виджет». Пользователю приходилось сначала понимать внутреннюю структуру системы, а уже потом — искать нужный сценарий.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Было</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Интерфейс платформы до систематизации">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img03-scrl-01.png" alt="7TECH: интерфейс до систематизации" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img04-scrl-01.png" alt="7TECH: навигация до систематизации" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img05-scrl-01.png" alt="7TECH: таблицы до систематизации" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img06-scrl-01.png" alt="7TECH: фильтры до систематизации" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img07-scrl-01.png" alt="7TECH: настройки до систематизации" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="systematization">
+        <h2 class="case-section__title">Систематизация UI и работа с фронтендом</h2>
+        <div class="case-section__content text-editorial">
+          <p>Я пересобрал интерфейс в более системное состояние: почистил лишние сущности в макетах, нормализовал сетку, вертикальный ритм, типографику и систему отступов. Практически все базовые элементы были переведены на auto-layout и компонентный подход с состояниями и переиспользуемыми паттернами.</p>
+          <p>Вместе с фронтенд-командой мы согласовали систему дизайн-токенов и общие ограничения интерфейса. Перестали плодить новые стили и начали двигаться внутри понятной системы размеров, состояний и визуальных правил.</p>
+          <p>В результате интерфейс стал значительно консистентнее, а взаимодействие между дизайном и разработкой — быстрее и предсказуемее. Многие вопросы, которые раньше постоянно всплывали на дизайн-ревью и в процессе вёрстки, просто исчезли за счёт появления общей системы.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title"></h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Интерфейс после систематизации">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img08-scrl-02.png" alt="7TECH: обновлённый интерфейс" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img09-scrl-02.png" alt="7TECH: компонентная система" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img10-scrl-02.png" alt="7TECH: дизайн-токены в интерфейсе" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img11-scrl-02.png" alt="7TECH: консистентные паттерны" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img12-scrl-02.png" alt="7TECH: унифицированная навигация" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img13-scrl-02.gif" alt="7TECH: анимация обновлённого интерфейса" width="800" height="499" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="tables-filters">
+        <h2 class="case-section__title">Таблицы и фильтры</h2>
+        <div class="case-section__content text-editorial">
+          <p>В ходе пересборки, отдельно переработал фильтры и таблицы. Фильтрация стала компактнее и чище визуально, а активные фильтры начали отображаться тегами. Это упростило работу с большими таблицами устройств и продуктов.</p>
+          <p>В таблицах, вместо разрозненных ячеек связанные сущности начали группироваться вместе, как, например, бренд и модель устройства. За счёт этого таблицы стали компактнее и информативнее: на той же площади помещалось больше полезной информации.</p>
+          <p>Дополнительно появились раскрывающиеся строки с подробной информацией, куда удалость вынести вторичную информацию, а позже и алерт сообшения и иную коммуникацию. В предыдущей версии это было невозможно реализовать из-за структуры самой таблицы.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Таблицы и фильтры</h2>
+        <div class="case-section__content">
+          <figure class="case-figure">
+            <div class="case-figure__frame"><img src="assets/7tech/img15-scrl-03.png" alt="7TECH: переработанные таблицы и фильтры" width="1672" height="1044" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="complex-scenarios">
+        <h2 class="case-section__title">Переработка отображения сложных сценариев</h2>
+        <div class="case-section__content text-editorial">
+          <p>Многие процессы строились вокруг знания терминов платформы и запоминания контекста. Пользователь должен был помнить, как называется ранее загруженный файл, или что скрывается за определенным названием воздействия.</p>
+          <p>Я начал постепенно добавлять визуальный контекст и превью в местах, где это было критично для понимания сценариев. Например, воздействия стали отображаться как набор визуальных блоков с понятными типами действий, а не как длинная техническая форма.</p>
+          <p>Похожим образом были переработаны виджеты и медиа-элементы. Вместо простых имён файлов пользователь начал видеть превью загруженных элементов и быстрее ориентироваться в уже созданном контенте.</p>
+          <p>Это не меняло саму бизнес-логику платформы, но заметно снижало когнитивную нагрузку и делало систему дружелюбнее без радикального изменения привычных процессов.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Скрины отправки воздействий до после, страница виджетов до после</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Воздействия и виджеты до и после">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img16-scrl-04.png" alt="7TECH: отправка воздействий до и после" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img17-scrl-04.png" alt="7TECH: страница виджетов до и после" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img18-scrl-04.png" alt="7TECH: визуальный контекст в сценариях" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="mobile">
+        <h2 class="case-section__title">Мобильная версия</h2>
+        <div class="case-section__content text-editorial">
+          <p>Параллельно, я спроектировал мобильную версию для ключевых сценариев управления устройствами. При этом мобильный интерфейс не был просто уменьшенной копией десктопа. Например, таблицы устройств были полностью перепридуманы под мобильный контекст и превратились в карточный формат с приоритетом ключевой информации и быстрых действий.</p>
+          <p>Это позволило сохранить управляемость системы даже на небольших экранах.</p>
+          <p>Дополнительно мобильная версия помогла унифицировать сценарии и структуру сущностей продукта — многие паттерны пришлось упростить и привести к более консистентному виду, что позже улучшило целостность интерфейса и в десктопной версии.</p>
+        </div>
+      </section>
+
+      <figure class="case-figure case-figure--fs">
+        <div class="case-figure__frame case-figure__frame--wide"><img src="assets/7tech/img19-fs.png" alt="7TECH: мобильная версия ключевых сценариев" width="2880" height="1350" loading="lazy" decoding="async"></div>
+      </figure>
+
+      <section class="case-section case-grid" id="logo">
+        <h2 class="case-section__title">Обновление логотипа</h2>
+        <div class="case-section__content text-editorial">
+          <p>Уже в период моей отработки после решения об уходе появилась задача срочно переработать логотип компании. Сам товарный знак уже был зарегистрирован, но текущую версию логотипа начали использовать позже, и именно к ней появились претензии — основная проблема была в прямом использовании цифры «7». Дополнительно обязательным условием стало использование полного названия Seven Tech Solutions, что заметно усложняло задачу.</p>
+          <p>Новый логотип я построил вокруг абстрактной изометрической формы с негативным пространством. Она всё ещё ассоциировалась с «7», но уже не считывалась как прямое изображение цифры. Сам знак стал проще, легче масштабировался и лучше работал внутри интерфейсов, favicon и презентаций.</p>
+          <p>Дополнительно логотип ушёл от жёсткой градиентной привязки и стал монохромным по умолчанию. Это сделало айдентику гибче: знак можно было адаптировать под разные носители и контексты, перекрашивая по ситуации. Базовым вариантом стала белая версия логотипа на фирменном системном синем градиенте.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid">
+        <h2 class="case-section__title case-section__title--caption">Логотип до после</h2>
+        <div class="case-section__content">
+          <div class="case-carousel" data-carousel>
+            <div class="case-scroller" aria-label="Логотип до и после">
+              <div class="case-scroller__track">
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img20-scrl-05.png" alt="7TECH: логотип до обновления" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+                <figure class="case-figure case-scroller__item">
+                  <div class="case-figure__frame"><img src="assets/7tech/img21-scrl-05.png" alt="7TECH: логотип после обновления" width="1672" height="1044" loading="lazy" decoding="async"></div>
+                </figure>
+              </div>
+            </div>
+            <div class="case-carousel__controls">
+              <button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button>
+              <button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="results">
+        <h2 class="case-section__title">Результат работы и развитие продукта</h2>
+        <div class="case-section__content text-editorial">
+          <p>По мере развития платформы моя роль сместилась от систематизации интерфейсов к проработке новых сценариев и архитектуры продукта. Во время работы появились новые разделы: управление сотрудниками, ролями, лицензиями, лимитами операций и новыми типами конфигураций устройств.</p>
+          <p>За время работы удалось:</p>
+          <ul>
+            <li>систематизировать UI и выстроить переиспользуемую компонентную систему</li>
+            <li>снизить потери между дизайном и фронтендом</li>
+            <li>сделать интерфейс заметно дружелюбнее без радикального слома пользовательского опыта</li>
+            <li>переработать навигацию и подготовить продукт к дальнейшему масштабированию</li>
+            <li>улучшить читаемость сложных сценариев управления устройствами</li>
+            <li>спроектировать мобильную версию для ключевых сценариев работы</li>
+            <li>обновить айдентику и логотип компании под новые требования</li>
+          </ul>
+          <p>После моего ухода, по словам коллег, компания ещё продолжительное время не нанимала отдельного продуктового дизайнера. За счёт выстроенной системы компонентов и паттернов интерфейс продолжал масштабироваться достаточно органично: аналитики и фронтенд-команда уже мыслили готовыми сущностями и могли собирать новые сценарии внутри существующей системы без постоянного дизайн-сопровождения.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <nav class="footer__nav" aria-label="Контакты">
+          <a class="footer__link" href="https://t.me/" target="_blank" rel="noopener noreferrer">Телеграм <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="mailto:">Почта <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://hh.ru/" target="_blank" rel="noopener noreferrer">HH <span class="arrow45">↑</span></a>
+        </nav>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -247,7 +247,7 @@
 (function () {
   "use strict";
 
-  var page = document.querySelector(".page--intelkon .main");
+  var page = document.querySelector(".page--intelkon .main, .page--7tech .main, .page--fllex .main");
   if (!page) return;
 
   var images = Array.prototype.slice.call(page.querySelectorAll(".case-hero__panel img, .case-figure__frame img"));
@@ -283,7 +283,7 @@
     .then(function (module) {
       var PhotoSwipeLightbox = module.default;
       var lightbox = new PhotoSwipeLightbox({
-        gallery: ".page--intelkon .main",
+        gallery: ".page--intelkon .main, .page--7tech .main, .page--fllex .main",
         children: ".case-lightbox__item",
         pswpModule: function () {
           return import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js");
