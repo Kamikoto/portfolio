@@ -114,3 +114,211 @@ The homepage still had placeholder links for newly added case studies, while pre
 - The Doyu and Getmobi homepage cards intentionally remain `href="#"` because no corresponding local pages exist yet.
 - Do not remove `_config.yml` unless replacing it with another GitHub Pages build configuration that still excludes `docs/agent-log.md`.
 - `docs/agent-log.md` is not linked from any page and should remain append-only.
+
+---
+
+## 2026-07-10 — Doyu case study + centered phone media patterns
+
+### Goal
+
+Create the Doyu case-study page as a native part of the existing portfolio, using `ref/doyu.md`, the Doyu visual references, and the established Intelkon/7TECH/Fllex implementation patterns.
+
+### Files modified
+
+- `doyu.html` (created)
+- `index.html`
+- `styles.css`
+- `script.js`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Created `doyu.html` with the shared case-study shell: sticky case header, back arrow, hero, generated TOC placeholder, editorial sections, carousel sections, fullscreen figure, shared footer, and `script.js`.
+- Wired the Doyu homepage project card to `doyu.html`.
+- Added `body.page--doyu` to the shared case-study CSS selector groups so Doyu inherits the same typography, spacing, responsive grid, sticky header behavior, carousels, and reduced-motion rules as the existing case pages.
+- Added Doyu to the shared PhotoSwipe page selector in `script.js`.
+- Updated the lightbox image query to exclude `.case-hero__icon`, because the Doyu hero icon is inline heading content and should behave like a character, not a fullscreen gallery item.
+- Added reusable hero title-panel classes:
+  - `case-hero__panel--title` for the light right hero panel.
+  - `case-hero__heading` for H1 text inside a hero panel.
+  - `case-hero__icon` for the inline, baseline-aligned icon that scales with the H1.
+- Added reusable centered phone-media classes:
+  - `case-figure__frame--device-stage` for the proportional rounded cloud stage used by centered phone media.
+  - `case-centered-media--video` for a single phone-shaped MP4 inside a centered cloud frame.
+  - `case-centered-media--pair` for paired phone screens inside one slide.
+  - `case-centered-media__screen` for each individual phone screen with shared radius and shadow.
+- Used MP4s only inside centered media containers, with `autoplay`, `muted`, `loop`, and `playsinline`.
+- Grouped paired files into single slides where `(2)` variants exist:
+  - `img09-scrl-02.mp4` + `img09-scrl-02(2).mp4`
+  - `img10-scrl-02.mp4` + `img10-scrl-02(2).mp4`
+  - `img13.mp4` + `img13(2).png`
+- Preserved fullscreen viewer behavior for Doyu images in hero panels and figure frames; videos are not turned into standalone videos or lightbox items.
+- Used the actual available hero icon file `assets/Doyu/icon-img02-crv.png`; the prompt referred to `icon-img02-cvr`, but that file does not exist on disk.
+
+### Reason
+
+Doyu needed a new case-study page without redesigning the portfolio system. The new title-panel hero and phone-video/pair media patterns are specific to Doyu assets, but they are implemented as reusable extensions of the existing hero and centered-media components instead of page-specific hacks or duplicate JS.
+
+### Notes for the next agent
+
+- Current live case-study routes are `doyu.html`, `intelkon.html`, `7tech.html`, and `fllex.html`.
+- Doyu uses `assets/Doyu/` with a capital **D**. Keep paths case-sensitive for GitHub Pages.
+- The Doyu hero icon file is named `icon-img02-crv.png` on disk. Do not rename it to `cvr` without updating `doyu.html`.
+- Keep paired `(2)` Doyu assets inside one `case-scroller__item`; they represent one slide, not two carousel slides.
+- `case-centered-media--video`, `case-centered-media--pair`, and `case-centered-media__screen` are reusable for future centered phone-screen videos/images.
+- The inline hero icon is intentionally excluded from PhotoSwipe in `script.js` via `img:not(.case-hero__icon)`.
+- Verification performed this session: static link/asset scan, homepage card target checks, back-arrow checks, carousel control structure, Doyu video attributes, paired-screen grouping, TOC source headings, Doyu lightbox selector coverage, responsive CSS selector coverage, and local HTTP `200 OK` checks for `/`, `/doyu.html`, one MP4, and one parenthesized PNG asset.
+
+---
+
+## 2026-07-10 — Doyu hero glyph and iPhone screen-radius refinements
+
+### Goal
+
+Refine the Doyu hero composition to better match the provided reference and make embedded phone screens read more like iPhone displays.
+
+### Files modified
+
+- `doyu.html`
+- `styles.css`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Swapped the Doyu hero inline icon from PNG to the available SVG asset: `assets/Doyu/icon-img02-crv.svg`.
+- Removed the artificial `max-width` constraint from `.case-hero__heading` so the heading uses the available right-panel width and wraps closer to the reference composition.
+- Tuned `.case-hero__panel--title` padding so the text block sits closer to the reference instead of feeling overly inset.
+- Tuned `.case-hero__heading` type sizing/line-height for the title-panel composition while keeping it tied to the existing case-study typography scale.
+- Adjusted `.case-hero__icon` sizing, spacing, and baseline alignment so the SVG behaves more like an embedded glyph in the sentence.
+- Increased the visible radius on `.case-centered-media--video` and `.case-centered-media__screen` using proportional elliptical border-radius values, preserving the existing shadow and responsiveness.
+
+### Reason
+
+The first Doyu implementation treated the hero as an H1 with an inline image, but the visual reference reads as a single typographic composition inside the right hero panel. Embedded phone videos/screens also needed a more device-like radius rather than a generic small rounded rectangle.
+
+### Notes for the next agent
+
+- The prompt referred to `icon-img02-cvr.svg`, but the SVG currently present in `assets/Doyu/` is named `icon-img02-crv.svg`; `doyu.html` uses the file that exists on disk.
+- The larger iPhone-like radius is applied to the embedded screens/videos themselves, not to the outer centered presentation container.
+- Keep `.case-hero__icon` excluded from the PhotoSwipe wrapping in `script.js`; it is typographic content, not gallery media.
+
+---
+
+## 2026-07-10 — Doyu hero icon specificity fix
+
+### Goal
+
+Make the Doyu hero SVG behave like a typographic glyph embedded in the heading sentence and use the requested `icon-img02-cvr.svg` asset path.
+
+### Files modified
+
+- `doyu.html`
+- `styles.css`
+- `assets/Doyu/icon-img02-cvr.svg` (created)
+- `docs/agent-log.md`
+
+### Changes made
+
+- Created `assets/Doyu/icon-img02-cvr.svg` from the existing Doyu SVG artwork so the requested filename resolves locally.
+- Updated `doyu.html` to use `assets/Doyu/icon-img02-cvr.svg`.
+- Replaced the low-specificity `.case-hero__icon` CSS rule with `.case-hero__heading .case-hero__icon`.
+- The more specific selector intentionally overrides the generic `.case-hero__panel img { width: 100%; height: 100%; object-fit: cover; }` rule, which was making the icon behave like standalone hero media.
+- Tuned the glyph to `0.72em` square with a small inline margin and baseline offset so it reads as roughly cap-height, wraps naturally, and affects layout like one character rather than a block or media element.
+
+### Reason
+
+The visual mismatch came from CSS specificity: the generic hero-panel image rule was stronger than the icon rule. The icon was inside a hero panel, so it inherited media sizing instead of typographic sizing.
+
+### Notes for the next agent
+
+- Keep the selector `.case-hero__heading .case-hero__icon` or another selector stronger than `.case-hero__panel img`; otherwise the hero icon will regress to panel-media sizing.
+- The icon must remain inline inside the H1, not a flex child, block, absolutely positioned layer, or separate panel element.
+
+---
+
+## 2026-07-10 — Doyu hero responsive typography
+
+### Goal
+
+Make the Doyu hero heading preserve the reference-like composition across smaller breakpoints without awkward wrapping, clipping, or overflow.
+
+### Files modified
+
+- `styles.css`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Made `.case-hero__panel--title` an inline-size container so the Doyu heading can scale from the available right-panel width.
+- Replaced the previous desktop-biased heading size with fluid typography:
+  - viewport fallback: `clamp(24px, 4vw, 64px)`
+  - container-query sizing: `clamp(24px, 6.45cqw, 64px)`
+- Made heading letter-spacing fluid with `clamp(-1.62px, -0.025em, -0.72px)` so tight desktop tracking does not become too aggressive on small screens.
+- Adjusted title-panel padding with responsive clamps so the heading has enough room on mobile while retaining the reference composition on desktop.
+- Kept the SVG icon sized in `em`, so it scales together with the text.
+
+### Reason
+
+The desktop hero was close, but the heading’s previous minimum size made smaller panels feel cramped. Scaling from the panel width preserves the text/icon relationship and keeps the sentence inside the right panel more reliably across breakpoints.
+
+### Notes for the next agent
+
+- The Doyu hero heading now depends on container query units (`cqw`) with a viewport fallback. Keep `container-type: inline-size` on `.case-hero__panel--title`.
+- The icon remains typographic because its size is defined in `em`; do not replace it with fixed pixel sizing.
+
+---
+
+## 2026-07-10 — Doyu carousel caption title
+
+### Goal
+
+Add the missing gray section title next to the Doyu carousel containing `img05-scrl-01`.
+
+### Files modified
+
+- `doyu.html`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Replaced the empty left-side section title before the `img05-scrl-01` carousel with `Онбординг Tg Mini app, Quick guide,  добавление заметки`.
+- Used the existing `case-section__title case-section__title--caption` classes so typography, gray color, spacing, TOC exclusion, and layout match other media caption sections.
+
+### Reason
+
+The carousel needed the same gray left caption treatment as other case-study image/media sections, without adding a new component or style variation.
+
+### Notes for the next agent
+
+- Caption titles should continue using `case-section__title--caption`; the TOC generator intentionally excludes them.
+
+---
+
+## 2026-07-10 — Doyu hero horizontal overflow fix + publish
+
+### Goal
+
+Remove the small horizontal overflow in the Doyu hero without hiding it with page-level `overflow-x: hidden`, then verify, commit, and push the latest website version.
+
+### Files modified
+
+- `styles.css`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Removed `overflow: auto` from `.case-hero__grid` so the hero grid itself is not a horizontal scroll container.
+- Changed the mobile hero grid track from `1fr` to `minmax(0, 1fr)`.
+- Changed the desktop hero grid tracks from `var(--case-col-left) var(--case-col-right)` to `minmax(0, var(--case-col-left)) minmax(0, var(--case-col-right))`.
+- Added `min-width: 0` to `.case-hero__grid`, `.case-hero__left`, `.case-hero__panel`, and `.case-hero__heading` so grid/flex children can shrink within the available viewport instead of honoring intrinsic content width.
+- Added a desktop rule for `.case-hero__grid--duo .case-hero__panel--title` matching the existing duo phone-panel behavior: `aspect-ratio: auto`, `height: 100%`, and `min-height: 100%`.
+
+### Reason
+
+The remaining desktop overflow was not caused by the inline SVG. Chrome measurements showed the Doyu title panel kept its own `aspect-ratio` inside the two-column duo grid. The row height was set by the left hero image, and the right panel widened itself a few pixels beyond its assigned grid track to preserve its aspect ratio. Letting the title panel stretch to the grid cell height removes the overflow at the source.
+
+### Notes for the next agent
+
+- Do not restore `overflow: auto` on `.case-hero__grid`; carousels handle their own horizontal scrolling via `.case-scroller`.
+- Keep the desktop `.case-hero__grid--duo .case-hero__panel--title` rule paired with the phone-panel duo rule. Both prevent aspect-ratio-driven overflow in two-panel heroes.
+- Final Chrome layout verification checked viewport widths `320`, `375`, `390`, `430`, `768`, `769`, `1024`, `1440`, and `1920`; all reported `documentDelta=0`, `gridOverflow=0`, `titleOverflow=0`, and `headingOverflow=0`.

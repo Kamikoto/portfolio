@@ -81,7 +81,8 @@ body {
 
 body.page--intelkon,
 body.page--7tech,
-body.page--fllex {
+body.page--fllex,
+body.page--doyu {
   scroll-padding-top: 72px;
 }
 
@@ -382,7 +383,8 @@ button {
    ========================================================================== */
 body.page--intelkon,
 body.page--7tech,
-body.page--fllex {
+body.page--fllex,
+body.page--doyu {
   --color-bg: #ffffff;
   --color-title: #002026;
   --color-body: #002026;
@@ -428,7 +430,8 @@ body.page--fllex {
 
 .page--intelkon .text-editorial,
 .page--7tech .text-editorial,
-.page--fllex .text-editorial {
+.page--fllex .text-editorial,
+.page--doyu .text-editorial {
   hyphens: none;
   -webkit-hyphens: none;
   word-break: normal;
@@ -457,9 +460,9 @@ body.page--fllex {
 
 .case-hero__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
-  overflow: auto;
+  min-width: 0;
   padding: 8px;
   background-color: var(--color-bg);
   border-radius: 20px;
@@ -469,6 +472,7 @@ body.page--fllex {
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 8px;
+  min-width: 0;
 }
 
 .case-hero__grid--duo .case-hero__left {
@@ -483,6 +487,7 @@ body.page--fllex {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   overflow: hidden;
   background-color: var(--color-container);
   border-radius: 4px;
@@ -504,6 +509,15 @@ body.page--fllex {
   padding: 0;
 }
 
+.case-hero__panel--title {
+  container-type: inline-size;
+  align-items: flex-start;
+  justify-content: flex-start;
+  aspect-ratio: 1656 / 1248;
+  padding: clamp(24px, 3.3vw, 56px) clamp(18px, 1.75vw, 36px);
+  background-color: #F8F8FC;
+}
+
 .case-hero__panel img {
   width: 100%;
   height: 100%;
@@ -513,6 +527,30 @@ body.page--fllex {
 .case-hero__panel--desktop img {
   object-fit: contain;
   object-position: center;
+}
+
+.case-hero__heading {
+  margin: 0;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--case-h1-weight);
+  font-size: clamp(24px, 4vw, 64px);
+  font-size: clamp(24px, 6.45cqw, 64px);
+  line-height: 1.12;
+  letter-spacing: clamp(-1.62px, -0.025em, -0.72px);
+  color: var(--color-title);
+  width: 100%;
+  min-width: 0;
+}
+
+.case-hero__heading .case-hero__icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  max-width: none;
+  margin: 0 0.045em;
+  vertical-align: -0.065em;
+  object-fit: contain;
 }
 
 /* Editorial grid */
@@ -727,6 +765,11 @@ body.page--fllex {
   background-color: #F8F8FC;
 }
 
+.case-figure__frame--device-stage {
+  aspect-ratio: 3344 / 2088;
+  border-radius: 2.1531%;
+}
+
 .case-centered-media {
   display: block;
   flex: 0 1 auto;
@@ -747,11 +790,51 @@ body.page--fllex {
   overflow: hidden;
 }
 
+.case-centered-media--video {
+  width: 21.7703%;
+  aspect-ratio: 1180 / 2556;
+  border-radius: 10.1695% / 4.6948%;
+  box-shadow: 0 1.5px 4.5px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.case-centered-media--pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16%;
+  width: 50.5981%;
+}
+
+.case-centered-media__screen {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1180 / 2556;
+  border-radius: 10.1695% / 4.6948%;
+  box-shadow: 0 1.5px 4.5px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
 .case-figure__frame--centered .case-centered-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
+}
+
+.case-figure__frame--centered .case-centered-media video,
+.case-centered-media__screen video,
+.case-centered-media__screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.case-centered-media__screen .case-lightbox__item {
+  width: 100%;
+  height: 100%;
 }
 
 .case-scroller__item img {
@@ -849,7 +932,8 @@ body.page--fllex {
 @media (min-width: 769px) {
   body.page--intelkon,
   body.page--7tech,
-  body.page--fllex {
+  body.page--fllex,
+  body.page--doyu {
     --case-h1-size: 54px;
     --case-h1-lh: 60px;
     --case-h2-size: 26px;
@@ -868,7 +952,7 @@ body.page--fllex {
   }
 
   .case-hero__grid {
-    grid-template-columns: var(--case-col-left) var(--case-col-right);
+    grid-template-columns: minmax(0, var(--case-col-left)) minmax(0, var(--case-col-right));
     gap: 8px;
     align-items: stretch;
   }
@@ -878,6 +962,12 @@ body.page--fllex {
   }
 
   .case-hero__grid--duo .case-hero__panel--phone {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .case-hero__grid--duo .case-hero__panel--title {
     aspect-ratio: auto;
     height: 100%;
     min-height: 100%;
@@ -908,7 +998,8 @@ body.page--fllex {
 @media (min-width: 1440px) {
   body.page--intelkon,
   body.page--7tech,
-  body.page--fllex {
+  body.page--fllex,
+  body.page--doyu {
     --page-padding-x: 64px;
     --case-section-space: 80px;
   }
@@ -980,14 +1071,22 @@ body.page--fllex {
   .page--fllex .case-toc__link:hover,
   .page--fllex .case-carousel__button,
   .page--fllex .case-carousel__button:hover,
-  .page--fllex .case-carousel__fill {
+  .page--fllex .case-carousel__fill,
+  .page--doyu .header__back,
+  .page--doyu .header__back:hover,
+  .page--doyu .case-toc__link,
+  .page--doyu .case-toc__link:hover,
+  .page--doyu .case-carousel__button,
+  .page--doyu .case-carousel__button:hover,
+  .page--doyu .case-carousel__fill {
     transition: none;
   }
 
   .footer__link:hover,
   .page--intelkon .header__back:hover,
   .page--7tech .header__back:hover,
-  .page--fllex .header__back:hover {
+  .page--fllex .header__back:hover,
+  .page--doyu .header__back:hover {
     font-weight: var(--type-title-weight);
     font-variation-settings: "wght" var(--type-title-weight);
     letter-spacing: var(--type-title-ls);
@@ -995,7 +1094,8 @@ body.page--fllex {
 
   .page--intelkon .case-toc__link:hover,
   .page--7tech .case-toc__link:hover,
-  .page--fllex .case-toc__link:hover {
+  .page--fllex .case-toc__link:hover,
+  .page--doyu .case-toc__link:hover {
     font-weight: var(--case-toc-weight);
     font-variation-settings: "wght" var(--case-toc-weight);
     letter-spacing: var(--case-h2-ls);
@@ -1003,7 +1103,8 @@ body.page--fllex {
 
   .page--intelkon .case-carousel__button:hover,
   .page--7tech .case-carousel__button:hover,
-  .page--fllex .case-carousel__button:hover {
+  .page--fllex .case-carousel__button:hover,
+  .page--doyu .case-carousel__button:hover {
     font-weight: var(--case-h2-weight);
     font-variation-settings: "wght" var(--case-h2-weight);
     letter-spacing: var(--case-h2-ls);
@@ -1011,7 +1112,8 @@ body.page--fllex {
 
   .page--intelkon .case-scroller,
   .page--7tech .case-scroller,
-  .page--fllex .case-scroller {
+  .page--fllex .case-scroller,
+  .page--doyu .case-scroller {
     scroll-behavior: auto;
   }
 }
