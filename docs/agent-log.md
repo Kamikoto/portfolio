@@ -322,3 +322,39 @@ The remaining desktop overflow was not caused by the inline SVG. Chrome measurem
 - Do not restore `overflow: auto` on `.case-hero__grid`; carousels handle their own horizontal scrolling via `.case-scroller`.
 - Keep the desktop `.case-hero__grid--duo .case-hero__panel--title` rule paired with the phone-panel duo rule. Both prevent aspect-ratio-driven overflow in two-panel heroes.
 - Final Chrome layout verification checked viewport widths `320`, `375`, `390`, `430`, `768`, `769`, `1024`, `1440`, and `1920`; all reported `documentDelta=0`, `gridOverflow=0`, `titleOverflow=0`, and `headingOverflow=0`.
+
+---
+
+## 2026-07-14 — Stable TOC hover + non-clickable covers/fullscreen images
+
+### Goal
+
+Remove TOC hover layout jumps while preserving the visual weight effect, and prevent cover/fullscreen images from behaving like gallery/lightbox images.
+
+### Files modified
+
+- `styles.css`
+- `script.js`
+- `docs/agent-log.md`
+
+### Changes made
+
+- Changed `.case-toc__link:hover` so it no longer changes real font metrics. It keeps the normal `font-weight`, `font-variation-settings`, and `letter-spacing`, then adds a subtle `text-shadow: 0.018em 0 0 currentColor` for a metrics-stable visual bolding effect.
+- Added `text-shadow` to the TOC link transition list and reset it in the reduced-motion hover override.
+- Updated the PhotoSwipe wrapping selector in `script.js` from hero + all figure-frame images to only:
+  - `.case-figure:not(.case-figure--fs) .case-figure__frame:not(.case-figure__frame--wide) img`
+- As a result, hero cover images and fullscreen/wide images are not wrapped in `.case-lightbox__item`, do not get the zoom cursor, and do not open PhotoSwipe.
+- Gallery and inline inspection images remain wrapped and keep the existing fullscreen viewer behavior.
+
+### Reason
+
+Increasing TOC font weight changes text metrics and can alter line wrapping. A single negative letter-spacing value could not preserve wrapping across every page and mobile width: values that fixed one long title could unwrap another. The final solution keeps layout metrics unchanged and applies the hover emphasis as a visual-only weight effect.
+
+Cover and fullscreen images are presentation media, not inspection-gallery media, so they should not be clickable or zoomable.
+
+### Notes for the next agent
+
+- Do not reintroduce real `font-weight` changes on `.case-toc__link:hover` unless you also add a robust layout-stability strategy for all case pages and mobile widths.
+- Cover images are `.case-hero__panel img`; fullscreen images are `.case-figure--fs` / `.case-figure__frame--wide`. These should stay outside PhotoSwipe wrapping.
+- Final browser verification covered `doyu.html`, `intelkon.html`, `7tech.html`, and `fllex.html` at widths `320`, `375`, `390`, `430`, `768`, `1024`, and `1440`.
+- Verification confirmed `tocProblems=0`, `heroWrapped=0`, `fsWrapped=0`, gallery wrapped counts equal gallery image counts, cover cursor is `auto`, and gallery cursor is `zoom-in`.

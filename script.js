@@ -250,7 +250,7 @@
   var page = document.querySelector(".page--intelkon .main, .page--7tech .main, .page--fllex .main, .page--doyu .main");
   if (!page) return;
 
-  var images = Array.prototype.slice.call(page.querySelectorAll(".case-hero__panel img:not(.case-hero__icon), .case-figure__frame img"));
+  var images = Array.prototype.slice.call(page.querySelectorAll(".case-figure:not(.case-figure--fs) .case-figure__frame:not(.case-figure__frame--wide) img"));
   var supportsTouch = window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 0;
   if (!images.length) return;
 

@@ -633,16 +633,19 @@ body.page--doyu {
   letter-spacing: var(--case-h2-ls);
   color: var(--color-title);
   text-decoration: none;
+  text-shadow: none;
   transition:
     font-weight var(--footer-interaction-transition),
     font-variation-settings var(--footer-interaction-transition),
-    letter-spacing var(--footer-interaction-transition);
+    letter-spacing var(--footer-interaction-transition),
+    text-shadow var(--footer-interaction-transition);
 }
 
 .case-toc__link:hover {
-  font-weight: var(--case-toc-weight-hover);
-  font-variation-settings: "wght" var(--case-toc-weight-hover);
-  letter-spacing: var(--footer-ls-hover);
+  font-weight: var(--case-toc-weight);
+  font-variation-settings: "wght" var(--case-toc-weight);
+  letter-spacing: var(--case-h2-ls);
+  text-shadow: 0.018em 0 0 currentColor;
 }
 
 .case-toc__link:focus-visible {
@@ -1099,6 +1102,7 @@ body.page--doyu {
     font-weight: var(--case-toc-weight);
     font-variation-settings: "wght" var(--case-toc-weight);
     letter-spacing: var(--case-h2-ls);
+    text-shadow: none;
   }
 
   .page--intelkon .case-carousel__button:hover,
