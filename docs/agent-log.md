@@ -358,3 +358,48 @@ Cover and fullscreen images are presentation media, not inspection-gallery media
 - Cover images are `.case-hero__panel img`; fullscreen images are `.case-figure--fs` / `.case-figure__frame--wide`. These should stay outside PhotoSwipe wrapping.
 - Final browser verification covered `doyu.html`, `intelkon.html`, `7tech.html`, and `fllex.html` at widths `320`, `375`, `390`, `430`, `768`, `1024`, and `1440`.
 - Verification confirmed `tocProblems=0`, `heroWrapped=0`, `fsWrapped=0`, gallery wrapped counts equal gallery image counts, cover cursor is `auto`, and gallery cursor is `zoom-in`.
+
+
+---
+
+## 2026-09-16 — GetMobi case and portfolio editorial update
+
+### User-approved scope
+
+- Build GetMobi from `/Users/mac/Downloads/getmobi.txt` and existing `assets/GetMobi/` screenshots.
+- Apply the previously reviewed role/result blocks, shorter headings, editorial changes, cross-links and email correction across the four existing cases.
+- User clarified that TOC hover must visibly increase font weight like footer contacts; do not add yellow.
+- Preserve visual language and original assets; do not require Figma or new graphics.
+
+### Changes
+
+- Added `getmobi.html`, linked the existing homepage card and corrected `management` spelling.
+- GetMobi uses raw screenshots in HTML/CSS stages, shared carousels and PhotoSwipe; full originals remain available in the viewer. Screenshot 17 has an explicitly captioned crop; screenshot 14 is also the component-library overview and hero crop.
+- Added GetMobi to shared page styles, breakpoints, reduced-motion selectors and lightbox selectors.
+- Moved concise role blocks ahead of TOCs; shortened navigation headings; retained existing image/video assets and galleries.
+- Edited outcomes to qualitative observations and their evidence sources. The user confirmed the effects but no longer has exact metrics; Fllex's previously stated percentages were removed. Four existing cases disclose that exact metric values have not been retained. GetMobi makes no invented analytics claims.
+- Added Doyu/Fllex cross-links and corrected the email link on all pages.
+- TOC hover/focus uses the footer weight token (840). An invisible bold copy reserves label dimensions to prevent reflow. Reduced-motion preserves the state change without animation.
+- Long hero titles use responsive sizing on narrow screens.
+
+### Verification
+
+- Local asset/link existence, unique static IDs, generated TOC targets, JavaScript syntax and whitespace checks.
+- Browser checks at 1440, 390 and 320 pixels across home and all five cases; follow-up narrow-screen verification after correcting title overflow.
+- GetMobi screenshot review on desktop/mobile, carousel navigation and PhotoSwipe open/close; TOC hover verified at weight 840 with no label-box movement, including reduced-motion mode.
+- Existing image files are unchanged. New GetMobi assets supplied by the user were already untracked before work started; they must be included when publishing.
+
+## 2026-09-16 — Review corrections
+
+- Removed metric-retention footnotes and below-image captions from all case pages at the user's request. Keep the qualitative result text; do not restore the footnotes.
+- GetMobi hero now uses the existing homepage cover (`assets/images/img_02.png`) on the left and a typographic statement on the right, reusing the Doyu title-panel style.
+- Component-library screenshot moved into the standard right editorial column.
+- Screenshot 17 now shows the complete image with no crop or enlargement inside the slide. Fullscreen viewing remains available as for other screenshots.
+- Homepage experience changed from more than 5 to more than 6 years.
+
+## 2026-09-17 — Final copy and ordering
+
+- Moved the generated table of contents above “Моя роль” on all five case pages.
+- Replaced every role and result block with the user-approved final copy.
+- Changed 7TECH “Основные проблемы” from bold bullet items to three plain paragraphs.
+- Replaced the GetMobi hero with `GMCV1.png` and `GMCV2.png` from `assets/GetMobi/`, using the shared two-image hero pattern.

@@ -82,6 +82,7 @@ body {
 body.page--intelkon,
 body.page--7tech,
 body.page--fllex,
+body.page--getmobi,
 body.page--doyu {
   scroll-padding-top: 72px;
 }
@@ -384,6 +385,7 @@ button {
 body.page--intelkon,
 body.page--7tech,
 body.page--fllex,
+body.page--getmobi,
 body.page--doyu {
   --color-bg: #ffffff;
   --color-title: #002026;
@@ -402,7 +404,7 @@ body.page--doyu {
   --case-h2-ls: -0.78px;
   --case-h2-weight: 550;
   --case-toc-weight: 500;
-  --case-toc-weight-hover: 790;
+  --case-toc-weight-hover: var(--footer-weight-hover);
 
   --case-body-size: 16px;
   --case-body-lh: 27px;
@@ -431,6 +433,7 @@ body.page--doyu {
 .page--intelkon .text-editorial,
 .page--7tech .text-editorial,
 .page--fllex .text-editorial,
+.page--getmobi .text-editorial,
 .page--doyu .text-editorial {
   hyphens: none;
   -webkit-hyphens: none;
@@ -641,11 +644,21 @@ body.page--doyu {
     text-shadow var(--footer-interaction-transition);
 }
 
-.case-toc__link:hover {
-  font-weight: var(--case-toc-weight);
-  font-variation-settings: "wght" var(--case-toc-weight);
-  letter-spacing: var(--case-h2-ls);
-  text-shadow: 0.018em 0 0 currentColor;
+.case-toc__link:hover,
+.case-toc__link:focus-visible {
+  font-weight: var(--case-toc-weight-hover);
+  font-variation-settings: "wght" var(--case-toc-weight-hover);
+}
+
+/* Reserve the bold label's dimensions so hover cannot reflow the TOC. */
+.case-toc__label { display: grid; min-width: 0; }
+.case-toc__label > span,
+.case-toc__label::after { grid-area: 1 / 1; }
+.case-toc__label::after {
+  content: attr(data-label);
+  visibility: hidden;
+  font-weight: var(--case-toc-weight-hover);
+  font-variation-settings: "wght" var(--case-toc-weight-hover);
 }
 
 .case-toc__link:focus-visible {
@@ -936,6 +949,7 @@ body.page--doyu {
   body.page--intelkon,
   body.page--7tech,
   body.page--fllex,
+  body.page--getmobi,
   body.page--doyu {
     --case-h1-size: 54px;
     --case-h1-lh: 60px;
@@ -1002,6 +1016,7 @@ body.page--doyu {
   body.page--intelkon,
   body.page--7tech,
   body.page--fllex,
+  body.page--getmobi,
   body.page--doyu {
     --page-padding-x: 64px;
     --case-section-space: 80px;
@@ -1075,12 +1090,19 @@ body.page--doyu {
   .page--fllex .case-carousel__button,
   .page--fllex .case-carousel__button:hover,
   .page--fllex .case-carousel__fill,
+  .page--getmobi .header__back,
   .page--doyu .header__back,
+  .page--getmobi .header__back:hover,
   .page--doyu .header__back:hover,
+  .page--getmobi .case-toc__link,
   .page--doyu .case-toc__link,
+  .page--getmobi .case-toc__link:hover,
   .page--doyu .case-toc__link:hover,
+  .page--getmobi .case-carousel__button,
   .page--doyu .case-carousel__button,
+  .page--getmobi .case-carousel__button:hover,
   .page--doyu .case-carousel__button:hover,
+  .page--getmobi .case-carousel__fill,
   .page--doyu .case-carousel__fill {
     transition: none;
   }
@@ -1089,6 +1111,7 @@ body.page--doyu {
   .page--intelkon .header__back:hover,
   .page--7tech .header__back:hover,
   .page--fllex .header__back:hover,
+  .page--getmobi .header__back:hover,
   .page--doyu .header__back:hover {
     font-weight: var(--type-title-weight);
     font-variation-settings: "wght" var(--type-title-weight);
@@ -1098,16 +1121,16 @@ body.page--doyu {
   .page--intelkon .case-toc__link:hover,
   .page--7tech .case-toc__link:hover,
   .page--fllex .case-toc__link:hover,
+  .page--getmobi .case-toc__link:hover,
   .page--doyu .case-toc__link:hover {
-    font-weight: var(--case-toc-weight);
-    font-variation-settings: "wght" var(--case-toc-weight);
-    letter-spacing: var(--case-h2-ls);
-    text-shadow: none;
+    font-weight: var(--case-toc-weight-hover);
+    font-variation-settings: "wght" var(--case-toc-weight-hover);
   }
 
   .page--intelkon .case-carousel__button:hover,
   .page--7tech .case-carousel__button:hover,
   .page--fllex .case-carousel__button:hover,
+  .page--getmobi .case-carousel__button:hover,
   .page--doyu .case-carousel__button:hover {
     font-weight: var(--case-h2-weight);
     font-variation-settings: "wght" var(--case-h2-weight);
@@ -1117,7 +1140,41 @@ body.page--doyu {
   .page--intelkon .case-scroller,
   .page--7tech .case-scroller,
   .page--fllex .case-scroller,
+  .page--getmobi .case-scroller,
   .page--doyu .case-scroller {
     scroll-behavior: auto;
   }
 }
+
+/* GetMobi: raw screenshots in the shared editorial presentation. */
+.getmobi-hero { align-items: stretch; }
+
+.getmobi-screen { overflow: hidden; border: 6px solid #e7e8eb; border-radius: 14px; background: #f7f7f7; box-shadow: 0 1.5px 4.5px rgba(0,0,0,.08); }
+
+.getmobi-stage { display: flex; align-items: center; justify-content: center; border-radius: 2.1531%; }
+.getmobi-stage .getmobi-screen { width: 80%; }
+.getmobi-stage .getmobi-screen img { width: 100%; height: auto; object-fit: contain; }
+
+.getmobi-library .case-figure__frame { background: transparent; }
+@media (max-width: 768px) {
+ .getmobi-screen { border-width: 3px; border-radius: 7px; }
+ .getmobi-stage .getmobi-screen { width: 85%; }
+
+}
+
+.case-inline-link { text-decoration: underline; text-underline-offset: .2em; }
+.case-inline-link:hover { text-decoration-thickness: 2px; }
+.case-inline-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+
+@media (max-width: 768px) {
+  .case-hero__title {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+}
+
+/* GetMobi library and uncropped portrait screenshot. */
+.getmobi-library { width: 100%; }
+.getmobi-stage .getmobi-screen--permissions { width: 61%; }

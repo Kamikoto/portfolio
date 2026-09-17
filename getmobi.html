@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111539120', 'ym');
+
+      ym(111539120, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/111539120" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GetMobi: дизайн-система и пользовательские сценарии новой B2B-платформы управления устройствами. Кейс продуктового дизайнера Дани.">
+  <title>GetMobi — проектирование B2B-платформы управления устройствами</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page--getmobi">
+  <div class="page">
+    <header class="header header--case">
+      <a class="header__back" href="index.html" aria-label="Вернуться на главную"><span class="arrow-left">↑</span></a>
+      <p class="header__identity">
+        <span class="header__name">Привет, я&nbsp;Даня</span>
+        <span class="header__wave" aria-hidden="true">👋</span>
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="case-hero" aria-label="GetMobi">
+        <h1 class="case-hero__title">GetMobi — проектирование B2B-платформы управления устройствами</h1>
+        <div class="case-hero__grid case-hero__grid--duo getmobi-hero">
+          <div class="case-hero__left">
+            <div class="case-hero__panel case-hero__panel--phone">
+              <img src="assets/GetMobi/GMCV1.png" alt="GetMobi: интерфейс платформы управления устройствами" width="1018" height="1248" decoding="async" fetchpriority="high">
+            </div>
+          </div>
+          <div class="case-hero__panel case-hero__panel--desktop">
+            <img src="assets/GetMobi/GMCV2.png" alt="GetMobi: сценарии управления устройствами" width="1664" height="1248" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" aria-labelledby="toc-title"><h2 class="case-section__title" id="toc-title">Содержание</h2><nav class="case-toc" aria-label="Содержание"><ol class="case-toc__list" id="case-toc-list"></ol></nav></section>
+
+      <section class="case-section case-grid" id="role">
+        <h2 class="case-section__title">Моя роль</h2>
+        <div class="case-section__content text-editorial">
+          <p>Founding Product Designer. Отвечал за UX/UI MDM-платформы и развитие интерфейса с нуля. Проектировал ключевые B2B-сценарии, сформировал систему компонентов и паттернов и работал с командой разработки над их реализацией.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-grid" id="product">
+<h2 class="case-section__title">О продукте</h2>
+<div class="case-section__content text-editorial"><p>GetMobi — облачная платформа для удалённого управления корпоративными устройствами и смартфонами, выданными в кредит. Администраторы подключают устройства, настраивают ограничения, управляют лицензиями и отправляют удалённые команды.</p>
+          <p>Я присоединился на ранней стадии, когда большая часть продукта ещё проектировалась. Задача состояла в том, чтобы заложить общую архитектуру интерфейса: новые функции должны были появляться без накопления разрозненных компонентов и противоречивых сценариев.</p></div>
+</section>
+
+      <section class="case-section case-grid" id="interface-system">
+<h2 class="case-section__title">Система интерфейса</h2>
+<div class="case-section__content text-editorial"><p>Работу я начал с повторяющихся элементов и правил их поведения. Собрал компактную библиотеку кнопок, полей, фильтров, статусов и других компонентов. На её основе проектировал таблицы, боковые панели, навигацию и многошаговые формы.</p>
+          <p>Важно было переиспользовать не только внешний вид, но и логику взаимодействия: где открываются подробности, как выбираются объекты, как пользователь запускает действие и получает обратную связь.</p>
+          <p>Практически весь интерфейс строился из этой библиотеки. При проектировании следующего раздела можно было опираться на готовые компоненты и сценарии, а разработчикам — использовать уже согласованное поведение.</p></div>
+</section>
+
+      <section class="case-section case-grid"><h2 class="case-section__title case-section__title--caption">Компоненты и состояния</h2><div class="case-section__content"><figure class="case-figure getmobi-library"><div class="case-figure__frame"><img src="assets/GetMobi/14.png" alt="GetMobi: библиотека компонентов и состояний" width="1414" height="1414" loading="lazy" decoding="async" ></div></figure></div></section>
+
+      <section class="case-section case-grid" id="devices">
+<h2 class="case-section__title">Работа с устройствами</h2>
+<div class="case-section__content text-editorial"><p>Таблица устройств стала основной рабочей областью администратора. Из неё нужно было переходить к сведениям об устройстве, проверять историю и выполнять операции.</p>
+          <p>Чтобы сократить переходы между страницами, я вынес подробности и историю в боковую панель. Список оставался на экране, а выбранное устройство выделялось в таблице. Администратор мог изучить контекст и перейти к действию, не открывая отдельную страницу.</p>
+          <p>Тот же принцип использовал для уведомлений: они появлялись рядом с рабочей областью и сохраняли контекст текущей задачи.</p></div>
+</section>
+
+      <section class="case-section case-grid"><h2 class="case-section__title case-section__title--caption">Карточка, история и уведомления</h2><div class="case-section__content"><div class="case-carousel" data-carousel><div class="case-scroller" aria-label="Карточка, история и уведомления"><div class="case-scroller__track"><figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/02.png" alt="Сведения об устройстве рядом с таблицей" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/03.png" alt="История статусов и действий" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/10.png" alt="Уведомления в боковой панели" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+</div></div><div class="case-carousel__controls"><button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button><button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button></div></div></div></section>
+
+      <section class="case-section case-grid" id="bulk-actions">
+<h2 class="case-section__title">Массовые действия</h2>
+<div class="case-section__content text-editorial"><p>Блокировка, разблокировка и отправка уведомлений решают разные задачи, но требуют похожей последовательности действий. Я спроектировал для них общий процесс: выбрать команду, указать устройства, подтвердить операцию и увидеть её статус.</p>
+          <p>На этапе выбора устройств таблица переходила в режим множественного выделения. Выбранные строки подсвечивались, а кнопка отправки показывала количество получателей.</p>
+          <p>Общий сценарий стал основой для новых типов команд. Команде не требовалось каждый раз заново проектировать выбор устройств и запуск операции: можно было сосредоточиться на особенностях конкретного действия.</p></div>
+</section>
+
+      <section class="case-section case-grid"><h2 class="case-section__title case-section__title--caption">Выбор команды и устройств</h2><div class="case-section__content"><div class="case-carousel" data-carousel><div class="case-scroller" aria-label="Выбор команды и устройств"><div class="case-scroller__track"><figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/04.png" alt="Шаг 1 — выбор типа команды" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/06.png" alt="Шаг 2 — выбор устройств" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+</div></div><div class="case-carousel__controls"><button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button><button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button></div></div></div></section>
+
+      <section class="case-section case-grid" id="growth">
+<h2 class="case-section__title">Развитие платформы</h2>
+<div class="case-section__content text-editorial"><p>По мере развития продукта я спроектировал расширенные фильтры, поиск, настройки конфигураций и управление административными ролями. Эти сценарии использовали ту же систему таблиц, панелей и форм.</p>
+          <p>В фильтрах предусмотрел выбор нескольких значений и диапазона дат. Применённые условия оставались видимыми над таблицей, чтобы администратор понимал, какую выборку устройств он видит.</p></div>
+</section>
+
+      <section class="case-section case-grid"><h2 class="case-section__title case-section__title--caption">Фильтры и диапазон дат</h2><div class="case-section__content"><div class="case-carousel" data-carousel><div class="case-scroller" aria-label="Фильтры и диапазон дат"><div class="case-scroller__track"><figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/08.png" alt="Выбор нескольких значений фильтра" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/09.png" alt="Фильтрация по диапазону дат" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+</div></div><div class="case-carousel__controls"><button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button><button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button></div></div></div></section>
+
+      <section class="case-section case-grid" id="growth-details">
+<h2 class="case-section__title"></h2>
+<div class="case-section__content text-editorial"><p>Для конфигураций использовал сочетание списка и панели подробностей. Для административных ролей — отдельную настройку разрешений, сгруппированных по разделам продукта.</p>
+          <p>Новые возможности встраивались в существующую архитектуру. Перед передачей в разработку я проверял интерфейсы по принципам удобства использования и совместно с аналитиками и разработчиками прорабатывал поведение сценариев.</p></div>
+</section>
+
+      <section class="case-section case-grid"><h2 class="case-section__title case-section__title--caption">Конфигурации и права доступа</h2><div class="case-section__content"><div class="case-carousel" data-carousel><div class="case-scroller" aria-label="Конфигурации и права доступа"><div class="case-scroller__track"><figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/11.png" alt="Конфигурация в панели подробностей" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen"><img src="assets/GetMobi/15.png" alt="Список администраторов и роли" width="1280" height="894" loading="lazy" decoding="async" ></div></div></figure>
+<figure class="case-figure case-scroller__item"><div class="case-figure__frame getmobi-stage"><div class="getmobi-screen getmobi-screen--permissions"><img src="assets/GetMobi/17.png" alt="Разрешения роли" width="1280" height="1159" loading="lazy" decoding="async" ></div></div></figure>
+</div></div><div class="case-carousel__controls"><button class="case-carousel__button" type="button" data-carousel-prev aria-label="Предыдущий слайд"><span class="arrow-left">↑</span></button><button class="case-carousel__button" type="button" data-carousel-next aria-label="Следующий слайд"><span class="arrow-right">↑</span></button></div></div></div></section>
+
+      <section class="case-section case-grid" id="result">
+<h2 class="case-section__title">Результат</h2>
+<div class="case-section__content text-editorial"><p>Построил интерфейс MDM-платформы вокруг единой системы компонентов и повторяемых рабочих сценариев: управление устройствами, массовые действия, конфигурации, роли и права доступа использовали общие паттерны. Это сократило количество шагов в ключевых операциях, ускорило работу администраторов и снизило количество ошибок в сложных сценариях. Для команды переиспользование компонентов и готовой логики ускорило проектирование новых функций и сократило количество уточнений при передаче макетов в разработку.</p></div>
+</section>
+
+      <footer class="footer">
+        <nav class="footer__nav" aria-label="Контакты">
+          <a class="footer__link" href="https://t.me/pishitut" target="_blank" rel="noopener noreferrer">Телеграм <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="mailto:danil.gusman@gmail.com">Почта <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://www.linkedin.com/in/dgusman/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow45">↑</span></a>
+          <a class="footer__link" href="https://hh.ru/resume/f0565b1dff09c33fd10039ed1f73494d716c34" target="_blank" rel="noopener noreferrer">HH <span class="arrow45">↑</span></a>
+        </nav>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
